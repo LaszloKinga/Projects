@@ -1,0 +1,5 @@
+rootProject.name = 'lkim2156-idde'
+include 'lkim2156-backend', 'lkim2156-desktop'
+include 'lkim2156-web'
+include 'lkim2156-spring'
+

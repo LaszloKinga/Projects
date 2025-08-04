@@ -1,0 +1,65 @@
+.chatContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chatCard {
+  width: 800px;
+  min-height: 500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.chatBox {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background: #f8f9fa;
+  max-height: 720px;
+}
+
+.messageBubble {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.userBubble {
+  background-color: #ef1e61;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.aiBubble {
+  background-color: #e4e6eb;
+  color: black;
+  border-bottom-left-radius: 0;
+}
+
+.scoreBubble {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  background-color: #b1ddcf;
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.resetter {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  z-index: 10;
+}

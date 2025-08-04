@@ -1,0 +1,100 @@
+.containerStyle {
+  padding-top: 50px;
+  height: 100vh;
+}
+
+.element {
+  max-width: 50%;
+  flex-grow: 1;
+}
+
+.profileCard {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ef1e61;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 100%; 
+  word-wrap: break-word; 
+}
+
+.profileCard .ms-4 {
+  margin-left: 15px;
+}
+
+.profilePictureStyle {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-left: 20px;
+}
+
+.loginComp {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 80%; 
+  height: auto; 
+}
+
+
+.tableContainer {
+  max-height: 440px; 
+  overflow-y: auto;
+}
+
+
+table {
+  width: 100%; 
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 200px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  gap: 0;
+}
+
+.left,
+.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.box {
+  width: 90%;
+  max-width: 600px;
+  min-height: 300px;
+  background: #ef1e61;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding-right: 0;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
