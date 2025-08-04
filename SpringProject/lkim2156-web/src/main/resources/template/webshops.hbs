@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webshop</title>
+    <link href="./style/style.css" rel="stylesheet">
+</head>
+<body>
+<form method="POST" action="webshops.hbs" id="form1">
+<input type="submit" value="KIJELENTKEZES" id="submit3">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Order Date</th>
+      <th>Address</th>
+      <th>Total Amount</th>
+      <th>Payment Method</th>
+      <th>Shipped</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this }}
+      <tr>
+       <td>{{id}}</td>
+        <td>{{orderDate}}</td>
+        <td>{{address}}</td>
+        <td>{{totalAmount}}</td>
+        <td>{{paymentMethod}}</td>
+        <td>{{isShippedText}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+</body>
+</html>
+

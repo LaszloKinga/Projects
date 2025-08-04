@@ -1,0 +1,66 @@
+plugins {
+    id 'war'
+    id 'java'
+}
+
+
+def deploymentName = 'lkim2156-web'
+
+
+def tomcatHome = System.getenv('CATALINA_HOME')
+logger.quiet("Tomcat home detected as '${tomcatHome}'")
+
+group = 'edu.bbte.idde.lkim2156'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task deploy(type: Copy, dependsOn: 'war') {
+
+
+    doFirst {
+        if (!tomcatHome) {
+            throw new InvalidUserDataException("Tomcat home (CATALINA_HOME) not set")
+        }
+    }
+
+
+    from war.archiveFile
+
+
+    rename war.archiveFileName.get(), "${deploymentName}.war"
+
+
+    into "${tomcatHome}/webapps"
+}
+
+
+
+task undeploy(type: Delete) {
+
+
+    doFirst {
+        if (!tomcatHome) {
+            throw new InvalidUserDataException("Tomcat home (CATALINA_HOME) not set")
+        }
+    }
+
+
+    delete "${tomcatHome}/webapps/${deploymentName}.war"
+}
+dependencies {
+    implementation(project(":lkim2156-backend"))
+
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.18.0'
+    implementation group: 'com.github.jknack', name: 'handlebars', version: '4.2.0'
+
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.16'
+    runtimeOnly group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.12'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.0'
+
+}
